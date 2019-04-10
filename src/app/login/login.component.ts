@@ -48,4 +48,13 @@ export class LoginComponent implements OnInit {
         );
   }
   
+  sendEvent = () => {
+    (<any>window).ga('send', 'event', {
+      eventCategory: 'Click Button',
+      eventLabel: 'Login',
+      eventAction: 'Login Attempt',
+      eventValue: 10
+    });
+  }
+  
 }

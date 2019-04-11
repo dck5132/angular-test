@@ -1,7 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HttpModule } from '@angular/http';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
+
 import { LoginModule } from './login/login.module';
 import { SharedModule } from './shared/shared.module';
 import { AppLoadModule } from './app-load/app-load.module';
@@ -41,7 +42,7 @@ if(!check) {
   imports: [
     AppLoadModule,
     BrowserModule,
-    HttpModule,
+    HttpClientModule,
     RouterModule.forRoot(
       appRoutes,
       { enableTracing: true }),

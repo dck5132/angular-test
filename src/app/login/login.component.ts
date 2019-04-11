@@ -1,13 +1,13 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { Http, Response } from '@angular/http';
+import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 
 import { AuthenticationService } from '../authentication.service';
 import { AuthguardService } from '../auth-guard.service';
 
-import { Login } from '../login';
-import { Token } from '../token';
+// import { Login } from '../login';
+// import { Token } from '../token';
 
 import { Injectable } from '@angular/core';
 
@@ -21,7 +21,7 @@ export class LoginComponent implements OnInit {
   @ViewChild('f') signupForm: NgForm;
   
   constructor(
-    private http: Http,
+    private http: HttpClient,
     private router: Router,
     private authentication: AuthenticationService,
     ) { }

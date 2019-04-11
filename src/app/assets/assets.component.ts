@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Http, Response } from '@angular/http';
 import { Router } from '@angular/router';
+
+import { HttpClient } from '@angular/common/http';
 
 import { AuthenticationService } from '../authentication.service';
 import { AuthguardService } from '../auth-guard.service';
@@ -17,7 +18,7 @@ import { Injectable } from '@angular/core';
 export class AssetsComponent implements OnInit {
   trucks = [];
   constructor(
-    private http: Http,
+    private http: HttpClient,
     private router: Router,
     private authentication: AuthenticationService,
     private assets: AssetService

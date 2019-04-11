@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Http, Response, Headers } from '@angular/http';
+import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 
 import 'rxjs/Rx';
@@ -10,14 +10,14 @@ export class AssetService {
 
   constructor(
       private router: Router,
-      private http: Http
+      private http: HttpClient
   ) { }
   
   getAssets(url: string) {
         return this.http.get(url)
         .map(
                 (response: Response) => {
-                    const data = response.json();
+                    const data: any = response.json();
                     for ( const truck of data)
                     return data;
                 }

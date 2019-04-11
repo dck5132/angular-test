@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Http, Response, Headers } from '@angular/http';
+import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 
 import 'rxjs/Rx';
@@ -10,7 +10,7 @@ import { Observable } from 'rxjs/Observable';
 export class AuthenticationService {
   token: string = null;
   constructor (
-      private http: Http,
+      private http: HttpClient,
       private router: Router
       ) {}
 
@@ -21,7 +21,7 @@ export class AuthenticationService {
         return this.http.get(url)
         .map(
                 (response: Response) => {
-                    const data = response.json();
+                    const data: any = response.json();
                     console.log(data.Token);
                     return data.Token;
                 }
